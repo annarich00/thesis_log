@@ -1,5 +1,6 @@
 deck-stage {
   display: block;
+  outline: none;
 }
 
 .deck-stage {
@@ -14,6 +15,15 @@ deck-stage {
   border: 1px solid rgba(255,255,255,0.12);
   border-radius: 1.25rem;
   background: rgba(15, 23, 42, 0.6);
+  opacity: 0.45;
+  transform: scale(0.985);
+  transition: opacity 200ms ease, transform 200ms ease, border-color 200ms ease;
+}
+
+.deck-slide.is-active {
+  opacity: 1;
+  transform: scale(1);
+  border-color: rgba(125, 211, 252, 0.45);
 }
 
 .deck-slide__number {
@@ -47,4 +57,14 @@ deck-stage {
 .deck-slide__body a {
   color: #7dd3fc;
   text-decoration: underline;
+}
+
+.deck-slide__next {
+  margin-top: 1.5rem;
+  border: 1px solid rgba(255,255,255,0.18);
+  background: transparent;
+  color: #e2e8f0;
+  border-radius: 9999px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
 }

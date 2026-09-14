@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { specialTopics } from '../lib/presentation';
+---
+
+<BaseLayout title="Special Topics" description="Special topics and class drop proposals.">
+  <section class="space-y-6">
+    <h1 class="text-4xl font-bold">Special Topics</h1>
+    <p class="max-w-3xl text-slate-300">Use this page for proposals, class-drop notes, or special topics that may come up during the semester.</p>
+
+    <div class="card space-y-3">
+      <h2 class="text-2xl font-semibold">Class drop proposals</h2>
+      <p class="text-slate-300">{specialTopics.proposal}</p>
+    </div>
+
+    <div class="card space-y-3">
+      <h2 class="text-2xl font-semibold">Deck notes</h2>
+      <p class="text-slate-300">This page is the source for the Special Topics slide in the weekly deck.</p>
+    </div>
+  </section>
+</BaseLayout>

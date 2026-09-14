@@ -9,11 +9,10 @@ import { weeklyPresentation, weeklyWork, literaturePapers, specialTopics, future
       <article class="deck-slide__content">
         <h2 class="deck-slide__title">{weeklyPresentation.title}</h2>
         <div class="deck-slide__body">
-          <p>This week’s outline follows the three working tabs in the site:</p>
+          <p>This week’s outline follows the site tabs in slide order:</p>
           <ul>
             {weeklyPresentation.outline.map((item) => <li><a href={item.href}>{item.label}</a></li>)}
           </ul>
-          <p>Slides in order: Weekly Work, Literature Search, Special Topics, Future Work.</p>
           <p>Click anywhere on the slide, press space, or use the arrow keys to move forward.</p>
         </div>
       </article>

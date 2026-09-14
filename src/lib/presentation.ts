@@ -1,8 +1,9 @@
 export const weeklyPresentation = {
   title: 'Weekly Presentations',
   outline: [
-    { label: 'Literature Search', href: '/literature-search/' },
     { label: 'Weekly Work', href: '/weekly-work/' },
+    { label: 'Literature Search', href: '/literature-search/' },
+    { label: 'Special Topics', href: '/special-topics/' },
     { label: 'Future Work', href: '/future-work/' },
   ],
 };

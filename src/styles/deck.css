@@ -4,45 +4,61 @@ deck-stage {
 }
 
 .deck-stage {
-  display: grid;
-  gap: 2rem;
+  position: relative;
+  min-height: 75vh;
+}
+
+.deck-stage__viewport {
+  position: relative;
+  min-height: 68vh;
 }
 
 .deck-slide {
-  position: relative;
-  min-height: 18rem;
-  padding: 2rem;
+  position: absolute;
+  inset: 0;
+  padding: 2.5rem;
   border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 1.25rem;
-  background: rgba(15, 23, 42, 0.6);
-  opacity: 0.45;
-  transform: scale(0.985);
-  transition: opacity 200ms ease, transform 200ms ease, border-color 200ms ease;
+  border-radius: 1.5rem;
+  background: rgba(15, 23, 42, 0.86);
+  opacity: 0;
+  transform: translateX(3rem) scale(0.98);
+  pointer-events: none;
+  transition: opacity 240ms ease, transform 240ms ease, border-color 240ms ease;
 }
 
 .deck-slide.is-active {
   opacity: 1;
-  transform: scale(1);
-  border-color: rgba(125, 211, 252, 0.45);
+  transform: translateX(0) scale(1);
+  pointer-events: auto;
+  border-color: rgba(125, 211, 252, 0.5);
+  z-index: 1;
 }
 
 .deck-slide__number {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  top: 1.25rem;
+  right: 1.25rem;
   font-size: 0.875rem;
   color: #7dd3fc;
   letter-spacing: 0.2em;
 }
 
+.deck-slide__content {
+  max-width: 54rem;
+  padding-top: 2rem;
+}
+
 .deck-slide__title {
   margin: 0 0 1rem;
-  font-size: 2rem;
-  font-weight: 700;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1.05;
 }
 
 .deck-slide__body {
   color: #e2e8f0;
+  font-size: 1.25rem;
+  line-height: 1.65;
 }
 
 .deck-slide__body ul {
@@ -51,7 +67,7 @@ deck-stage {
 }
 
 .deck-slide__body li + li {
-  margin-top: 0.5rem;
+  margin-top: 0.75rem;
 }
 
 .deck-slide__body a {
@@ -60,11 +76,28 @@ deck-stage {
 }
 
 .deck-slide__next {
-  margin-top: 1.5rem;
+  position: absolute;
+  right: 1.5rem;
+  bottom: 1.5rem;
   border: 1px solid rgba(255,255,255,0.18);
-  background: transparent;
+  background: rgba(255,255,255,0.06);
   color: #e2e8f0;
   border-radius: 9999px;
-  padding: 0.5rem 1rem;
+  padding: 0.65rem 1.1rem;
   cursor: pointer;
+}
+
+.deck-stage__hud {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  color: rgba(226, 232, 240, 0.75);
+  font-size: 0.875rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.deck-stage__counter {
+  color: #7dd3fc;
 }

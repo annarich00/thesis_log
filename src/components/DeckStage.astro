@@ -3,27 +3,35 @@ const { slides = [] } = Astro.props;
 ---
 
 <deck-stage class="deck-stage" tabindex="0" aria-label="Weekly presentation slides">
-  {slides.map((slide, index) => (
-    <section class:list={['deck-slide', slide.layout === 'cover' && 'deck-slide--cover']} data-slide={index}>
-      <div class="deck-slide__number">{String(index + 1).padStart(2, '0')}</div>
-      <article class="deck-slide__content">
-        {slide.title && <h2 class="deck-slide__title">{slide.title}</h2>}
-        <div class="deck-slide__body" set:html={slide.html} />
-      </article>
-      <button class="deck-slide__next" type="button" aria-label="Next slide">Next</button>
-    </section>
-  ))}
+  <div class="deck-stage__viewport">
+    {slides.map((slide, index) => (
+      <section class:list={['deck-slide', slide.layout === 'cover' && 'deck-slide--cover']} data-slide={index}>
+        <div class="deck-slide__number">{String(index + 1).padStart(2, '0')}</div>
+        <article class="deck-slide__content">
+          {slide.title && <h2 class="deck-slide__title">{slide.title}</h2>}
+          <div class="deck-slide__body" set:html={slide.html} />
+        </article>
+        <button class="deck-slide__next" type="button" aria-label="Next slide">Next</button>
+      </section>
+    ))}
+  </div>
+  <div class="deck-stage__hud" aria-hidden="true">
+    <span class="deck-stage__counter">01</span>
+    <span class="deck-stage__hint">click, space, or arrow keys</span>
+  </div>
 </deck-stage>
 
 <script is:inline>
   const stage = document.querySelector('deck-stage');
   if (stage) {
     const slides = [...stage.querySelectorAll('.deck-slide')];
+    const counter = stage.querySelector('.deck-stage__counter');
     let active = 0;
 
     const show = (index) => {
       active = Math.max(0, Math.min(index, slides.length - 1));
       slides.forEach((slide, i) => slide.classList.toggle('is-active', i === active));
+      if (counter) counter.textContent = String(active + 1).padStart(2, '0');
     };
 
     stage.addEventListener('click', (event) => {

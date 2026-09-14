@@ -7,15 +7,29 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <h1 class="text-4xl font-bold">Literature Search</h1>
     <p class="max-w-3xl text-slate-300">Track papers, notes, and relevance to the thesis topic here.</p>
 
-    <div class="grid gap-6 md:grid-cols-2">
-      <article class="card space-y-3">
-        <h2 class="text-2xl font-semibold">Paper 1</h2>
-        <p class="text-slate-300">Add a title, citation, and summary here.</p>
-      </article>
-      <article class="card space-y-3">
-        <h2 class="text-2xl font-semibold">Paper 2</h2>
-        <p class="text-slate-300">Add a title, citation, and summary here.</p>
-      </article>
+    <div class="overflow-hidden rounded-2xl border border-white/10">
+      <table class="w-full border-collapse text-left">
+        <thead class="bg-white/5 text-slate-200">
+          <tr>
+            <th class="px-4 py-3 font-semibold">Paper</th>
+            <th class="px-4 py-3 font-semibold">Summary / notes</th>
+          </tr>
+        </thead>
+        <tbody class="text-slate-300">
+          <tr class="border-t border-white/10 bg-black/10">
+            <td class="px-4 py-4 align-top"><a class="text-sky-300 underline" href="https://spj.science.org/doi/full/10.34133/space.0271" target="_blank" rel="noreferrer">Space article</a></td>
+            <td class="px-4 py-4 align-top">Relevant space-research framing for the thesis direction.</td>
+          </tr>
+          <tr class="border-t border-white/10 bg-black/10">
+            <td class="px-4 py-4 align-top"><a class="text-sky-300 underline" href="https://arxiv.org/pdf/2606.20394" target="_blank" rel="noreferrer">arXiv preprint</a></td>
+            <td class="px-4 py-4 align-top">Recent work that may inform the agentic AI project scope.</td>
+          </tr>
+          <tr class="border-t border-white/10 bg-black/10">
+            <td class="px-4 py-4 align-top"><a class="text-sky-300 underline" href="https://ieeexplore.ieee.org/abstract/document/11635138" target="_blank" rel="noreferrer">IEEE paper</a></td>
+            <td class="px-4 py-4 align-top">Potentially applicable engineering AI methods or decision support.</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </section>
 </BaseLayout>

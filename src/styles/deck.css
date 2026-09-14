@@ -101,3 +101,24 @@ deck-stage {
 .deck-stage__counter {
   color: #7dd3fc;
 }
+
+.deck-paper-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0 1.5rem;
+  font-size: 1rem;
+}
+
+.deck-paper-table th,
+.deck-paper-table td {
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+  vertical-align: top;
+}
+
+.deck-paper-table th {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.75rem;
+  color: #7dd3fc;
+}

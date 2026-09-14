@@ -12,7 +12,7 @@ const links = [
 <header class="border-b border-white/10 bg-slate-950/60 backdrop-blur">
   <div class="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-4 sm:px-6 lg:px-8 lg:flex-row lg:items-center lg:justify-between">
     <a class="text-lg font-semibold tracking-wide text-white" href={resolvePath('/')}>
-      Thesis Log
+      Thesis Log Home
     </a>
     <nav class="flex flex-wrap gap-3 text-sm text-slate-300">
       {links.map((link) => (
@@ -20,6 +20,9 @@ const links = [
           {link.label}
         </a>
       ))}
+      <a class="rounded-full border border-sky-300/40 px-4 py-2 font-semibold text-sky-200 transition hover:border-sky-200 hover:text-white" href="https://annarich00.github.io/thesis_log/" target="_blank" rel="noreferrer">
+        Open Live Site
+      </a>
     </nav>
   </div>
 </header>

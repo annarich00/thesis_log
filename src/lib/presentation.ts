@@ -1,5 +1,3 @@
-export type SlideSectionKey = 'weekly' | 'literature' | 'special' | 'future';
-
 export const weeklyPresentation = {
   title: 'Weekly Presentations',
   outline: [
@@ -11,6 +9,7 @@ export const weeklyPresentation = {
 
 export const weeklyWork = {
   title: 'Weekly Work',
+  summary: 'Work over the past week',
   items: [
     'Classes started!',
     'Got started on the agentic AI repo assignment',
@@ -38,11 +37,14 @@ export const literaturePapers = [
 
 export const specialTopics = {
   title: 'Special Topics',
+  summary: 'Class drop proposals',
   proposal: 'Zero G class — not as applicable as I had hoped',
+  body: 'This slide is reserved for special topics or proposals that come up later.',
 };
 
 export const futureWork = {
   title: 'Future Work',
+  summary: 'Work over the next week',
   items: [
     'Getting settled with a class routine',
     'Continue literature search',

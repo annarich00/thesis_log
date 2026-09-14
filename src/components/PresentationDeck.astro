@@ -3,7 +3,6 @@ import { weeklyPresentation, weeklyWork, literaturePapers, specialTopics, future
 ---
 
 <deck-stage class="deck-stage" tabindex="0" aria-label="Weekly presentation slides">
-  <slot />
   <div class="deck-stage__viewport">
     <section class="deck-slide deck-slide--cover is-active">
       <div class="deck-slide__number">01</div>
@@ -24,7 +23,7 @@ import { weeklyPresentation, weeklyWork, literaturePapers, specialTopics, future
       <article class="deck-slide__content">
         <h2 class="deck-slide__title">{weeklyWork.title}</h2>
         <div class="deck-slide__body">
-          <p><strong>Work over the past week</strong></p>
+          <p><strong>{weeklyWork.summary}</strong></p>
           <ul>{weeklyWork.items.map((item) => <li>{item}</li>)}</ul>
           <p><a href="/weekly-work/">Open the Weekly Work tab</a></p>
         </div>
@@ -51,9 +50,9 @@ import { weeklyPresentation, weeklyWork, literaturePapers, specialTopics, future
       <article class="deck-slide__content">
         <h2 class="deck-slide__title">{specialTopics.title}</h2>
         <div class="deck-slide__body">
-          <p><strong>Class drop proposals</strong></p>
+          <p><strong>{specialTopics.summary}</strong></p>
           <ul><li>{specialTopics.proposal}</li></ul>
-          <p>This slide is reserved for special topics or proposals that come up later.</p>
+          <p>{specialTopics.body}</p>
         </div>
       </article>
     </section>
@@ -63,7 +62,7 @@ import { weeklyPresentation, weeklyWork, literaturePapers, specialTopics, future
       <article class="deck-slide__content">
         <h2 class="deck-slide__title">{futureWork.title}</h2>
         <div class="deck-slide__body">
-          <p><strong>Work over the next week</strong></p>
+          <p><strong>{futureWork.summary}</strong></p>
           <ul>{futureWork.items.map((item) => <li>{item}</li>)}</ul>
           <p><a href="/future-work/">Open the Future Work tab</a></p>
         </div>

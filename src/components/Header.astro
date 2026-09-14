@@ -1,0 +1,25 @@
+---
+import { resolvePath } from '../lib/paths';
+
+const links = [
+  { href: resolvePath('/'), label: 'Weekly Presentations' },
+  { href: resolvePath('/literature-search'), label: 'Literature Search' },
+  { href: resolvePath('/weekly-work'), label: 'Weekly Work' },
+  { href: resolvePath('/future-work'), label: 'Future Work' },
+];
+---
+
+<header class="border-b border-white/10 bg-slate-950/60 backdrop-blur">
+  <div class="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-4 sm:px-6 lg:px-8 lg:flex-row lg:items-center lg:justify-between">
+    <a class="text-lg font-semibold tracking-wide text-white" href={resolvePath('/')}>
+      Thesis Log
+    </a>
+    <nav class="flex flex-wrap gap-3 text-sm text-slate-300">
+      {links.map((link) => (
+        <a class="rounded-full border border-white/10 px-4 py-2 transition hover:border-sky-300 hover:text-white" href={link.href}>
+          {link.label}
+        </a>
+      ))}
+    </nav>
+  </div>
+</header>

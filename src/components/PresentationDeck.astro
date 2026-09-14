@@ -1,0 +1,77 @@
+---
+import { weeklyPresentation, weeklyWork, literaturePapers, specialTopics, futureWork } from '../lib/presentation.ts';
+---
+
+<deck-stage class="deck-stage" tabindex="0" aria-label="Weekly presentation slides">
+  <slot />
+  <div class="deck-stage__viewport">
+    <section class="deck-slide deck-slide--cover is-active">
+      <div class="deck-slide__number">01</div>
+      <article class="deck-slide__content">
+        <h2 class="deck-slide__title">{weeklyPresentation.title}</h2>
+        <div class="deck-slide__body">
+          <p>This week’s outline follows the three working tabs in the site:</p>
+          <ul>
+            {weeklyPresentation.outline.map((item) => <li><a href={item.href}>{item.label}</a></li>)}
+          </ul>
+          <p>Click anywhere on the slide, press space, or use the arrow keys to move forward.</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="deck-slide">
+      <div class="deck-slide__number">02</div>
+      <article class="deck-slide__content">
+        <h2 class="deck-slide__title">{weeklyWork.title}</h2>
+        <div class="deck-slide__body">
+          <p><strong>Work over the past week</strong></p>
+          <ul>{weeklyWork.items.map((item) => <li>{item}</li>)}</ul>
+          <p><a href="/weekly-work/">Open the Weekly Work tab</a></p>
+        </div>
+      </article>
+    </section>
+
+    <section class="deck-slide">
+      <div class="deck-slide__number">03</div>
+      <article class="deck-slide__content">
+        <h2 class="deck-slide__title">Literature Search</h2>
+        <div class="deck-slide__body">
+          <p><strong>Interesting applicable papers</strong></p>
+          <table class="deck-paper-table">
+            <tr><th>Paper</th><th>Notes / summary</th></tr>
+            {literaturePapers.map((paper) => <tr><td><a href={paper.href} target="_blank" rel="noreferrer">{paper.title}</a></td><td>{paper.notes}</td></tr>)}
+          </table>
+          <p><a href="/literature-search/">Open the Literature Search tab</a></p>
+        </div>
+      </article>
+    </section>
+
+    <section class="deck-slide">
+      <div class="deck-slide__number">04</div>
+      <article class="deck-slide__content">
+        <h2 class="deck-slide__title">{specialTopics.title}</h2>
+        <div class="deck-slide__body">
+          <p><strong>Class drop proposals</strong></p>
+          <ul><li>{specialTopics.proposal}</li></ul>
+          <p>This slide is reserved for special topics or proposals that come up later.</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="deck-slide">
+      <div class="deck-slide__number">05</div>
+      <article class="deck-slide__content">
+        <h2 class="deck-slide__title">{futureWork.title}</h2>
+        <div class="deck-slide__body">
+          <p><strong>Work over the next week</strong></p>
+          <ul>{futureWork.items.map((item) => <li>{item}</li>)}</ul>
+          <p><a href="/future-work/">Open the Future Work tab</a></p>
+        </div>
+      </article>
+    </section>
+  </div>
+  <div class="deck-stage__hud" aria-hidden="true">
+    <span class="deck-stage__counter">01</span>
+    <span class="deck-stage__hint">click, space, or arrow keys</span>
+  </div>
+</deck-stage>

@@ -1,39 +1,15 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { resolvePath } from '../lib/paths';
-import DeckStage from '../components/DeckStage.astro';
-
-const slides = [
-  {
-    title: 'Weekly Presentations',
-    html: `<p>This week’s outline follows the three working tabs in the site:</p><ul><li><a href="${resolvePath('/literature-search')}">Literature Search</a></li><li><a href="${resolvePath('/weekly-work')}">Weekly Work</a></li><li><a href="${resolvePath('/future-work')}">Future Work</a></li></ul><p>Click anywhere on the slide, press space, or use the arrow keys to move forward.</p>`,
-  },
-  {
-    title: 'Weekly work',
-    html: `<p><strong>Work over the past week</strong></p><ul><li>Classes started!</li><li>Got started on the agentic AI repo assignment</li><li>Searched for more related papers, but have yet to dig deep into all listed</li></ul><p><a href="${resolvePath('/weekly-work')}">Open the Weekly Work tab</a></p>`,
-  },
-  {
-    title: 'Literature search',
-    html: `<p><strong>Interesting applicable papers</strong></p><table class="deck-paper-table"><tr><th>Paper</th><th>Notes / summary</th></tr><tr><td><a href="https://spj.science.org/doi/full/10.34133/space.0271" target="_blank" rel="noreferrer">Space article</a></td><td>Relevant space-research framing for the thesis direction.</td></tr><tr><td><a href="https://arxiv.org/pdf/2606.20394" target="_blank" rel="noreferrer">arXiv preprint</a></td><td>Recent work that may inform the agentic AI project scope.</td></tr><tr><td><a href="https://ieeexplore.ieee.org/abstract/document/11635138" target="_blank" rel="noreferrer">IEEE paper</a></td><td>Potentially applicable engineering AI methods or decision support.</td></tr></table><p><a href="${resolvePath('/literature-search')}">Open the Literature Search tab</a></p>`,
-  },
-  {
-    title: 'Special Topics',
-    html: `<p><strong>Class drop proposals</strong></p><ul><li>Zero G class — not as applicable as I had hoped</li></ul><p>This slide is reserved for special topics or proposals that come up later.</p>`,
-  },
-  {
-    title: 'Future work',
-    html: `<p><strong>Work over the next week</strong></p><ul><li>Getting settled with a class routine</li><li>Continue literature search</li><li>Narrow down agentic AI project scope to support the thesis goal</li></ul><p><a href="${resolvePath('/future-work')}">Open the Future Work tab</a></p>`,
-  },
-];
+import PresentationDeck from '../components/PresentationDeck.astro';
 ---
 
 <BaseLayout title="Weekly Presentations" description="Weekly presentation deck for advisor meetings.">
-  <script src={resolvePath('/deck-stage.js')}></script>
+  <script src="/thesis_log/deck-stage.js"></script>
   <section class="space-y-8">
     <div class="space-y-4">
       <p class="text-sm uppercase tracking-[0.3em] text-sky-300">Thesis Log</p>
       <h1 class="text-5xl font-bold leading-tight sm:text-6xl">Weekly Section</h1>
     </div>
-    <DeckStage slides={slides} />
+    <PresentationDeck />
   </section>
 </BaseLayout>

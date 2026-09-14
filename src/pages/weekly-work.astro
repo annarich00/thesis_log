@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { weeklyWork } from '../lib/presentation';
 ---
 
 <BaseLayout title="Weekly Work" description="Weekly work log and progress notes.">
@@ -10,15 +11,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <div class="card space-y-3">
       <h2 class="text-2xl font-semibold">This week</h2>
       <ul class="list-disc space-y-2 pl-5 text-slate-300">
-        <li>Classes started!</li>
-        <li>Got started on the agentic AI repo assignment</li>
-        <li>Searched for more related papers, but have yet to dig deep into all listed</li>
+        {weeklyWork.items.map((item) => <li>{item}</li>)}
       </ul>
     </div>
 
     <div class="card space-y-3">
       <h2 class="text-2xl font-semibold">Deck notes</h2>
-      <p class="text-slate-300">The Weekly Presentations slide for this topic will pull from this page next week.</p>
+      <p class="text-slate-300">The Weekly Presentations slide for this topic is built from this page’s content source.</p>
     </div>
   </section>
 </BaseLayout>

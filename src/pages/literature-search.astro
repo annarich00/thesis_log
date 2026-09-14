@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { literaturePapers } from '../lib/presentation';
 ---
 
 <BaseLayout title="Literature Search" description="Annotated literature search notes and paper tracking.">
@@ -16,18 +17,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           </tr>
         </thead>
         <tbody class="text-slate-300">
-          <tr class="border-t border-white/10 bg-black/10">
-            <td class="px-4 py-4 align-top"><a class="text-sky-300 underline" href="https://spj.science.org/doi/full/10.34133/space.0271" target="_blank" rel="noreferrer">Space article</a></td>
-            <td class="px-4 py-4 align-top">Relevant space-research framing for the thesis direction.</td>
-          </tr>
-          <tr class="border-t border-white/10 bg-black/10">
-            <td class="px-4 py-4 align-top"><a class="text-sky-300 underline" href="https://arxiv.org/pdf/2606.20394" target="_blank" rel="noreferrer">arXiv preprint</a></td>
-            <td class="px-4 py-4 align-top">Recent work that may inform the agentic AI project scope.</td>
-          </tr>
-          <tr class="border-t border-white/10 bg-black/10">
-            <td class="px-4 py-4 align-top"><a class="text-sky-300 underline" href="https://ieeexplore.ieee.org/abstract/document/11635138" target="_blank" rel="noreferrer">IEEE paper</a></td>
-            <td class="px-4 py-4 align-top">Potentially applicable engineering AI methods or decision support.</td>
-          </tr>
+          {literaturePapers.map((paper) => (
+            <tr class="border-t border-white/10 bg-black/10">
+              <td class="px-4 py-4 align-top"><a class="text-sky-300 underline" href={paper.href} target="_blank" rel="noreferrer">{paper.title}</a></td>
+              <td class="px-4 py-4 align-top">{paper.notes}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>

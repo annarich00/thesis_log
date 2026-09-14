@@ -1,0 +1,15 @@
+---
+const { slides = [] } = Astro.props;
+---
+
+<deck-stage class="deck-stage">
+  {slides.map((slide, index) => (
+    <section class:list={['deck-slide', slide.layout === 'cover' && 'deck-slide--cover']} data-step={index === 0 ? '0' : undefined}>
+      <div class="deck-slide__number">{String(index + 1).padStart(2, '0')}</div>
+      <article class="deck-slide__content">
+        {slide.title && <h2 class="deck-slide__title">{slide.title}</h2>}
+        <div class="deck-slide__body" set:html={slide.html} />
+      </article>
+    </section>
+  ))}
+</deck-stage>

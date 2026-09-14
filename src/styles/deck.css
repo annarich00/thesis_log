@@ -1,0 +1,50 @@
+deck-stage {
+  display: block;
+}
+
+.deck-stage {
+  display: grid;
+  gap: 2rem;
+}
+
+.deck-slide {
+  position: relative;
+  min-height: 18rem;
+  padding: 2rem;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 1.25rem;
+  background: rgba(15, 23, 42, 0.6);
+}
+
+.deck-slide__number {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 0.875rem;
+  color: #7dd3fc;
+  letter-spacing: 0.2em;
+}
+
+.deck-slide__title {
+  margin: 0 0 1rem;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.deck-slide__body {
+  color: #e2e8f0;
+}
+
+.deck-slide__body ul {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.deck-slide__body li + li {
+  margin-top: 0.5rem;
+}
+
+.deck-slide__body a {
+  color: #7dd3fc;
+  text-decoration: underline;
+}

@@ -6,23 +6,19 @@ import DeckStage from '../components/DeckStage.astro';
 const slides = [
   {
     title: 'Weekly Presentations',
-    html: `<p>This page acts like a weekly slide deck for advisor meetings.</p><p><a href="${resolvePath('/literature-search')}">Go to Literature Search</a></p>`,
+    html: `<p>This week’s outline follows the three working tabs in the site:</p><ul><li><a href="${resolvePath('/literature-search')}">Literature Search</a></li><li><a href="${resolvePath('/weekly-work')}">Weekly Work</a></li><li><a href="${resolvePath('/future-work')}">Future Work</a></li></ul>`,
   },
   {
-    title: 'Work over the past week',
-    html: `<ul><li>Classes started!</li><li>Got started on the agentic AI repo assignment</li><li>Searched for more related papers, but have yet to dig deep into all listed</li></ul>`,
+    title: 'Weekly work',
+    html: `<p><strong>Work over the past week</strong></p><ul><li>Classes started!</li><li>Got started on the agentic AI repo assignment</li><li>Searched for more related papers, but have yet to dig deep into all listed</li></ul><p><a href="${resolvePath('/weekly-work')}">Open the Weekly Work tab</a></p>`,
   },
   {
-    title: 'Class drop proposals',
-    html: `<ul><li>Zero G class — not as applicable as I had hoped</li></ul>`,
+    title: 'Literature search',
+    html: `<p><strong>Class drop proposals</strong></p><ul><li>Zero G class — not as applicable as I had hoped</li></ul><p><strong>Interesting applicable papers</strong></p><ul><li><a href="https://spj.science.org/doi/full/10.34133/space.0271" target="_blank" rel="noreferrer">Space article</a>: Relevant space-research framing for the thesis direction.</li><li><a href="https://arxiv.org/pdf/2606.20394" target="_blank" rel="noreferrer">arXiv preprint</a>: Recent work that may inform the agentic AI project scope.</li><li><a href="https://ieeexplore.ieee.org/abstract/document/11635138" target="_blank" rel="noreferrer">IEEE paper</a>: Potentially applicable engineering AI methods or decision support.</li></ul><p><a href="${resolvePath('/literature-search')}">Open the Literature Search tab</a></p>`,
   },
   {
-    title: 'Interesting applicable papers',
-    html: `<ul><li><strong><a href="https://spj.science.org/doi/full/10.34133/space.0271" target="_blank" rel="noreferrer">Space article</a>:</strong> Relevant space-research framing for the thesis direction.</li><li><strong><a href="https://arxiv.org/pdf/2606.20394" target="_blank" rel="noreferrer">arXiv preprint</a>:</strong> Recent work that may inform the agentic AI project scope.</li><li><strong><a href="https://ieeexplore.ieee.org/abstract/document/11635138" target="_blank" rel="noreferrer">IEEE paper</a>:</strong> Potentially applicable engineering AI methods or decision support.</li></ul>`,
-  },
-  {
-    title: 'Work over the next week',
-    html: `<ul><li>Getting settled with a class routine</li><li>Continue literature search</li><li>Narrow down agentic AI project scope to support the thesis goal</li></ul>`,
+    title: 'Future work',
+    html: `<p><strong>Work over the next week</strong></p><ul><li>Getting settled with a class routine</li><li>Continue literature search</li><li>Narrow down agentic AI project scope to support the thesis goal</li></ul><p><a href="${resolvePath('/future-work')}">Open the Future Work tab</a></p>`,
   },
 ];
 ---
